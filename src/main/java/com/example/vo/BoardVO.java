@@ -1,4 +1,6 @@
-package com.example;
+package com.example.vo;
+
+import java.util.Date;
 
 public class BoardVO {
 
@@ -10,6 +12,16 @@ public class BoardVO {
 
     private String content;
 
+    public Date getRegdate() {
+        return regdate;
+    }
+
+    public void setRegdate(Date regdate) {
+        this.regdate = regdate;
+    }
+
+
+    private Date regdate;
     public int getSeq() {
         return seq;
     }

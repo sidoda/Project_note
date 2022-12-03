@@ -1,34 +1,32 @@
-package com.example;
+package com.example.dao;
 
+import com.example.vo.BoardVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.xml.transform.Result;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-
+@Repository
 public class BoardDAO {
-    //Connection conn = null;
-    //PreparedStatement stmt = null;
-    //ResultSet rs = null;
 
+    @Autowired
     private JdbcTemplate template;
 
     public void setTemplate(JdbcTemplate template) {
         this.template = template;
     }
 
-    private final String BOARD_INSERT = "insert into P5_test (title, writer, content) values (?, ?, ?)";
-    private final String BOARD_UPDATE = "update P5_test set title=?, writer=?, content=? where seq=?";
-    private final String BOARD_DELETE = "delete from P5_test where seq=?";
-    private final String BOARD_GET = "select * from P5_test where seq=?";
-    private final  String BOARD_LIST = "select * from P5_test order by seq desc";
+    private final String BOARD_INSERT = "insert into P5_board (title, writer, content) values (?, ?, ?)";
+    private final String BOARD_UPDATE = "update P5_board set title=?, writer=?, content=? where seq=?";
+    private final String BOARD_DELETE = "delete from P5_board where seq=?";
+    private final String BOARD_GET = "select * from P5_board where seq=?";
+    private final  String BOARD_LIST = "select * from P5_board order by seq desc";
 
     public int insertBoard(BoardVO vo) {
         return template.update(BOARD_INSERT, new Object[]{vo.getTitle(), vo.getWriter(), vo.getContent()});
@@ -55,10 +53,11 @@ public class BoardDAO {
             @Override
             public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
                 BoardVO data = new BoardVO();
-                data.setSeq(rs.getInt("set"));
+                data.setSeq(rs.getInt("seq"));
                 data.setTitle(rs.getString("title"));
                 data.setWriter(rs.getString("writer"));
                 data.setContent(rs.getString("content"));
+                data.setRegdate(rs.getDate("regdate"));
                 return data;
             }
         });

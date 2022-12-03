@@ -4,13 +4,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <title>Add New Post</title>
 </head>
 <body>
 
 <h1>Add New Post</h1>
 <form action="addok" method="post">
-    <button type="button" onclick="location.href='list'">목록보기</button>
-    <button type="submit">등록하기</button>
 
     <table>
         <tr>
@@ -23,11 +22,12 @@
         </tr>
         <tr>
             <td>내용</td>
-            <td><textarea cols="50" rows="5" name="content"/></td>
+            <td><textarea name="content" cols="50" rows="5"></textarea></td>
         </tr>
     </table>
 
-
+    <button type="button" onclick="history.back()">목록보기</button>
+    <button type="submit">등록하기</button>
 </form>
 
 </body>
