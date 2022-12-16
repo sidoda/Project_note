@@ -41,8 +41,10 @@
     <th>ID</th>
     <th>Title</th>
     <th>Writer</th>
+    <th>Category</th>
+    <th>Subject</th>
     <th>Content</th>
-    <th>Regdate</th>
+    <th>subject_date</th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
@@ -51,8 +53,10 @@
     <td>${u.seq}</td>
     <td>${u.title}</td>
     <td>${u.writer}</td>
+    <td>${u.category}</td>
+    <td>${u.subject}</td>
     <td>${u.content}</td>
-    <td>${u.reg_date}</td>
+    <td>${u.subject_date}</td>
     <td><a href="editform/${u.seq}">글수정</a></td>
     <td><a href="javascript:delete_ok('${u.seq}')">글삭제</a></td>
   </tr>
@@ -61,8 +65,5 @@
 
 <br/><button type="button" onclick="location.href='add'">새글쓰기</button>
 <br/>
-<form action="search">
-  <input type="text" name="search"/><button type="submit"></button>
-</form>
 </body>
 </html>

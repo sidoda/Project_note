@@ -1,5 +1,7 @@
 package com.example.vo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class BoardVO {
@@ -16,6 +18,7 @@ public class BoardVO {
 
     private String content;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date subject_date;
 
     private Date reg_date;
