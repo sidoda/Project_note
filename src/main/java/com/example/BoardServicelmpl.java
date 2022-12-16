@@ -37,4 +37,8 @@ public class BoardServicelmpl implements BoardService {
     public List<BoardVO> getBoardList() {
         return boardDAO.getBoardList();
     }
+
+    public List<BoardVO> getSearchBoardList(String search) {
+        return boardDAO.getSearchBoardList(search);
+    }
 }

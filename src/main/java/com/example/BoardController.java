@@ -60,4 +60,11 @@ public class BoardController {
             System.out.println("데이터 삭제 성공!!!");
         return "redirect:/";
     }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String searchPost(@PathVariable("search") String search, Model model) {
+        model.addAttribute("list", boardService.getSearchBoardList(search));
+        return "board/post";
+    }
+
 }

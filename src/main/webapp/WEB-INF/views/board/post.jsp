@@ -35,7 +35,7 @@
   </script>
 </head>
 <body>
-<h1>자유게시판</h1>
+
 <table id="list", width="90%">
   <tr>
     <th>ID</th>
@@ -52,7 +52,7 @@
     <td>${u.title}</td>
     <td>${u.writer}</td>
     <td>${u.content}</td>
-    <td>${u.regdate}</td>
+    <td>${u.reg_date}</td>
     <td><a href="editform/${u.seq}">글수정</a></td>
     <td><a href="javascript:delete_ok('${u.seq}')">글삭제</a></td>
   </tr>
@@ -60,5 +60,9 @@
 </table>
 
 <br/><button type="button" onclick="location.href='add'">새글쓰기</button>
+<br/>
+<form action="search">
+  <input type="text" name="search"/><button type="submit"></button>
+</form>
 </body>
 </html>

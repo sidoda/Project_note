@@ -48,4 +48,9 @@ public class BoardDAO {
         return list;
     }
 
+    public List<BoardVO> getSearchBoardList(String search) {
+        List<BoardVO> list = sqlSession.selectList("Board.getSearchBoardList", search);
+        return list;
+    }
+
 }

@@ -21,8 +21,20 @@
             <td><input type="text" name="writer"/></td>
         </tr>
         <tr>
+            <td>카테고리</td>
+            <td><input type="text" name="category"/></td>
+        </tr>
+        <tr>
+            <td>과목</td>
+            <td><input type="text" name="subject"/></td>
+        </tr>
+        <tr>
             <td>내용</td>
             <td><textarea name="content" cols="50" rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td>수업날짜</td>
+            <td><input type="date" name="subject_date"/></td>
         </tr>
     </table>
 
